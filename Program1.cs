@@ -22,7 +22,7 @@ namespace ConsoleApplication1
                 
             catch(Exception ex)
             {
-                StreamWriter sr=new StreamWriter(@"C:\SampleFile\log.txt");
+                StreamWriter sr=new StreamWriter(@"C:\SampleFile\log1.txt");
                 sr.Write(ex.GetType().Name);
                 sr.WriteLine(ex.Message);
                 sr.Close();
@@ -31,8 +31,10 @@ namespace ConsoleApplication1
             catch(Exception e)
             {
                 Console.WriteLine(e.GetType().Name);
+	        if(e.InnerException != NULL)
+		{
                 Console.WriteLine(e.InnerException.GetType().Name);
-
+		}
             }
 
 
